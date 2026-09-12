@@ -36,7 +36,22 @@ Solid State Physics (Band, defects in semiconductor and oxides,) -> bulk semicon
 6. Carrier Concentration
 
 
+---
 
+## Applied Materials Characterization Project — Silicon Dioxide (SiO₂) in UCSD- Materials Research Science and Engineering Center
+
+This experimental materials analysis project attached in aim to connect semiconductor processing fundamentals  ,which I characterized a hydrated SiO₂ submicron particle system using complementary chemical, structural, surface, colloidal, morphological, and thermal techniques.
+
+The project applies concepts from electronic materials processing and semiconductor characterization through FTIR, Raman spectroscopy, SEM, DLS, zeta potential, contact-angle analysis, XRF, TGA, and DSC. The combined results were used to evaluate Si–O–Si bonding, surface hydroxylation, particle size and aggregation, surface charge, composition, and thermal behavior.
+
+This project demonstrates the relationship:
+
+Processing / Material State → Structure & Surface Chemistry → Measured Properties → Characterization & Interpretation
+
+## View Full SiO₂ Characterization Project -> [UCSD-MRSEC Project](https://docs.google.com/document/d/1n6j6AtY1mRAR7bK_CfmxCuf1xAbGKlog/edit?usp=sharing&ouid=108924249682329290569&rtpof=true&sd=true)
+
+
+---
 
 ## Practice 
 
