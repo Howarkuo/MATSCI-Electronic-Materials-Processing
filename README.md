@@ -58,3 +58,8 @@ Processing / Material State → Structure & Surface Chemistry → Measured Prope
 Find one scientific article in a peer-reviewed journal that discusses the layered semiconductor germanium disulfide, GeS2. i) Identify and describe the synthesis process including synthesis method and conditions (e.g., synthesis/processing temperatures, pressure, source materials, etc.). ii) What properties are explored (chemical, electrical, optical, etc.)? iii) What techniques are used to explore these properties? iv) Are there additional processing conditions (e.g., metals used to form electrical contacts, surface treatments, etc.)
 
 
+## Notes 
+![Page1.png](Page1.png)
+![Page2.png](Page2.png)
+![Page3.png](Page3.png)
+
