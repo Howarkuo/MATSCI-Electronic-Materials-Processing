@@ -21,7 +21,7 @@ Solid State Physics (Band, defects in semiconductor and oxides,) -> bulk semicon
 - Oxidation
 - Characterization – chemical, structural, electrical, optical
 
-## Discusion
+## Discusion 1
 - Review 1- Electronic Materials Processing /  Solid State Science
 
 1. Energy Band : How they formed and what they mean: Reciprocal solid atom lattice with overlap atomic orbital forms molecular orbitals -> Bond gap diagram (Conduciton/ Valence Band) for Metal v.s. semiconductor / insulator 
@@ -59,7 +59,16 @@ Find one scientific article in a peer-reviewed journal that discusses the layere
 
 
 ## Notes 
+## Discussion 1: Why under lower pressure (Better Vaccuum), the thin film of silicon survive longer ? 
+
 ![Page1.png](Page1.png)
 ![Page2.png](Page2.png)
 ![Page3.png](Page3.png)
 
+## Discussion 2 : How long it might take to create a vaccuum? (Thin film evaporation process, Discharge , plasmas and ion-surface interaction,Plasma and Ion Beam Processing of Thin Films  / materials science of thin films ch3,4,5 ,Ohring)
+
+- Electronic Structure -> gas/vacuum transport -> surface reaction -> film growth / removal -> device properties
+
+## Discussion 3 
+
+- Clausins - Claphyeron relation 
