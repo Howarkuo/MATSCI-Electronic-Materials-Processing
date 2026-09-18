@@ -22,19 +22,25 @@ Solid State Physics (Band, defects in semiconductor and oxides,) -> bulk semicon
 - Oxidation
 - Characterization – chemical, structural, electrical, optical
 
-## Discusion 1: Those structural change modify electronic properties , device properties 
+## Discusion 0: Those structural change modify electronic properties , device properties 
 - Review 1- Electronic Materials Processing /  Solid State Science
+PN and Metal-Semiconductor Junctions
+
   
-1. Energy Band : How they formed and what they mean: Reciprocal solid atom lattice with overlap atomic orbital forms molecular orbitals -> Bond gap diagram (Conduciton/ Valence Band) for Metal v.s. semiconductor / insulator 
-2. Reciprocal Lattice (Momentum-Space) - k : wavenumber 
-3. Semiconductor trends
-- Review 2- Intrinsic and Extrinsic Semiconductor
-1. Electron and Holes
-2. Dopant and free carrier in Silicon
-3. Effective Mass
-4. Density of States
-5. Fermi-Dirac Distribution Function for energy distribution
-6. Carrier Concentration
+1. Energy Band Structure: How they formed and what they mean: Reciprocal solid atom lattice with overlap atomic orbital forms molecular orbitals -> Bond gap diagram (Conduciton/ Valence Band) for Metal v.s. semiconductor / insulator 
+1.1 Reciprocal Lattice (Momentum-Space) - k : wavenumber 
+1.2 Semiconductor trends
+2. Intrinsic and Extrinsic Semiconductor
+2.1 Electron and Holes
+2.2 Dopant and free carrier in Silicon
+2.3 Effective Mass
+2.4 Density of States
+2.5 Fermi-Dirac Distribution Function for energy distribution
+2.6 Carrier Concentration / acceptor , donor, effective mass, fermi function
+2.7 Drift and Diffusion current mechanism (Electric field, Diffusion)
+
+3.Semiconductor Junction and Contacts
+
 
 
 ---
@@ -60,7 +66,7 @@ Find one scientific article in a peer-reviewed journal that discusses the layere
 
 
 ## Notes: Flux is so important in impringement! 
-# Discussion 1: Why under lower pressure (Better Vaccuum), the thin film of silicon survive longer ? 
+## Discussion 1: Why under lower pressure (Better Vaccuum), the thin film of silicon survive longer ? 
 
 ![Page1.png](Page1.png)
 ![Page2.png](Page2.png)
