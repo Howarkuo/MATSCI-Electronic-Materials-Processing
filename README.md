@@ -83,4 +83,41 @@ Find one scientific article in a peer-reviewed journal that discusses the layere
 
 ## Discussion 3 
 
-- Clausins - Claphyeron relation 
+- Clausins - Claphyeron relation
+
+## Handout 1 Concepts: Thin Films, Gas Kinetics, Vacuum
+
+1. **Thin Film Operations:** Add / Deposition, Remove / Etching, Modify / Surface Treatment
+2. **Thin Film Definition:**
+   A layer of material that meets one or more of the following criteria:
+   - **i) Synthesis:** Vapor- or liquid-phase transport of atoms or molecules to a substrate whereby the film forms via attachment (deposition) onto and/or reaction at the surface.
+   - **ii) Microstructure:** Layer morphology is governed by its interaction with the substrate.
+   - **iii) Properties / Functionality:** Not attainable in bulk form.
+3. **What makes thin film growth different from bulk?**
+   Activation Energy Barrier:
+   $$E_{\text{bulk}} \sim 4\text{ eV}, \qquad E_{\text{surface}} \sim 1\text{ eV}$$
+
+   - **Diffusivity:**
+     $$D = D_0 \exp\left(-\frac{E_a}{k_B T}\right)$$
+     $$L_{\text{diff}} = \sqrt{4Dt}$$
+     $$E_a \downarrow \; \Rightarrow \; D \uparrow \; \Rightarrow \; L_{\text{diff}} \uparrow$$
+
+4. If we want to understand gas-based growth, we must understand the motion/flow of atoms and molecules in the gas phase in space.## Handout 1 Concepts: Thin Films, Gas Kinetics, Vacuum
+
+1. **Thin Film Operations:** Add / Deposition, Remove / Etching, Modify / Surface Treatment
+2. **Thin Film Definition:**
+   A layer of material that meets one or more of the following criteria:
+   - **i) Synthesis:** Vapor- or liquid-phase transport of atoms or molecules to a substrate whereby the film forms via attachment (deposition) onto and/or reaction at the surface.
+   - **ii) Microstructure:** Layer morphology is governed by its interaction with the substrate.
+   - **iii) Properties / Functionality:** Not attainable in bulk form.
+3. **What makes thin film growth different from bulk?**
+   Activation Energy Barrier:
+   $$E_{\text{bulk}} \sim 4\text{ eV}, \qquad E_{\text{surface}} \sim 1\text{ eV}$$
+
+   - **Diffusivity:**
+     $$D = D_0 \exp\left(-\frac{E_a}{k_B T}\right)$$
+     $$L_{\text{diff}} = \sqrt{4Dt}$$
+     $$E_a \downarrow \; \Rightarrow \; D \uparrow \; \Rightarrow \; L_{\text{diff}} \uparrow$$
+
+4. If we want to understand gas-based growth, we must understand the motion/flow of atoms and molecules in the gas phase in space. Microscopic kinetic gas pressure  $$\[P=(\text{flux})(\text{momentum change per molecule})\]$$ $$= \[P=\left(\frac12 nv_x\right)(2mv_x)\]$$ $$\[{\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}=\frac13\overline{v^2}}\\]$$ , $$\[{P=\frac13n\overline{v^2}\frac{M}{N_A}}.\]$$
+5. 
