@@ -120,4 +120,7 @@ Find one scientific article in a peer-reviewed journal that discusses the layere
      $$E_a \downarrow \; \Rightarrow \; D \uparrow \; \Rightarrow \; L_{\text{diff}} \uparrow$$
 
 4. If we want to understand gas-based growth, we must understand the motion/flow of atoms and molecules in the gas phase in space. Microscopic kinetic gas pressure  $$\[P=(\text{flux})(\text{momentum change per molecule})\]$$ $$= \[P=\left(\frac12 nv_x\right)(2mv_x)\]$$ $$\[{\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}=\frac13\overline{v^2}}\\]$$ , $$\[{P=\frac13n\overline{v^2}\frac{M}{N_A}}.\]$$
-5. 
+
+## HW Practices
+## Practice 1: Derive Mean molecular gas kinetic energy with molecular collision from Bolzman probability distribution of Velocity to Ideal gas equation
+Two form of Ideal gas density, 1 use **number density of gas molecule** n per **avogadro number**, one use number of moles / amount of gas molecules
