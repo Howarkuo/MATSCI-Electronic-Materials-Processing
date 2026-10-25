@@ -131,3 +131,14 @@ Two form of Ideal gas density, 1 use **number density of gas molecule** n per **
 
 ### 4
 
+## Semiconductor Physics 
+### 1.1 Band structure
+
+### 1.2 Intrinsic and extrinsic semiconductors
+### 1.3 Semiconductor junctions and contacts
+### 1.4 Semiconductor devices
+
+
+## Thin film Deposition and Epitaxy
+
+
