@@ -881,9 +881,13 @@ where $A$ is junction area, $D_n,D_p$ are minority-carrier diffusion coefficient
 
 
 # Thin film Deposition and Epitaxy
-## 3. Epitaxy: Lattice Mismatch, Strain Accommodation, and Critical Thickness
 
-### 3.1 What is epitaxy?
+
+
+
+## 4. Epitaxy: Lattice Mismatch, Strain Accommodation, and Critical Thickness
+
+### 4.1 What is epitaxy?
 
 **Epitaxy** is the growth of a crystalline film whose crystallographic orientation is related to that of the underlying substrate. Atomic bonding and the crystalline template at the interface guide the deposited film's orientation.
 
@@ -897,7 +901,7 @@ where $A$ is junction area, $D_n,D_p$ are minority-carrier diffusion coefficient
 - **Heteroepitaxy:** growth on a different material, e.g., SiGe on Si.
 - Coherent heteroepitaxy constrains the film's **in-plane** lattice parameter to match the substrate; out-of-plane spacing may change through the Poisson effect.
 
-### 3.2 Lattice mismatch and mechanical strain
+### 4.2 Lattice mismatch and mechanical strain
 
 Using the **symmetric lattice-mismatch convention** from the lecture:
 
@@ -927,7 +931,7 @@ $$
 
 > **Exam pitfall:** The sign of the *lattice mismatch* and the sign of the *mechanical in-plane strain* are opposite under these definitions. Different references may define mismatch with the opposite sign, so always inspect the convention.
 
-### 3.3 Four ways epitaxial films accommodate mismatch
+### 4.3 Four ways epitaxial films accommodate mismatch
 
 | Mechanism | How it reduces the energy | Key consequence |
 |---|---|---|
@@ -938,7 +942,7 @@ $$
 
 These mechanisms can coexist. A coherent film is not necessarily relaxed, and a relaxed film need not relax *exclusively* through dislocations.
 
-### 3.4 Total-energy model for plastic relaxation
+### 4.4 Total-energy model for plastic relaxation
 
 In the simplified lecture model, the **total energy per unit substrate area** is
 
@@ -980,7 +984,7 @@ This simplified expression assumes $L\ge0$, $k_2>0$, and a dislocation orientati
 - Adding correctly oriented dislocations reduces $|f_{\mathrm{res}}|$ and therefore the elastic energy initially.
 - Creating dislocations also costs line energy; the logarithmic approximation must be used only within its physically meaningful range (in particular, where $\ln(k_4h)>0$).
 
-### 3.5 Derive the critical thickness $h_c$
+### 4.5 Derive the critical thickness $h_c$
 
 The model defines the onset of energetically favorable dislocation introduction by the **one-sided derivative at the coherent state**:
 
@@ -1042,7 +1046,7 @@ The coefficient units are consistent: $k_3/(k_1k_2)$ has units of length, and $k
 - If $\left.\partial E_{\mathrm{total}}/\partial L\right|_{0^+}<0$, a small density of relaxing dislocations lowers the energy; the coherent state is no longer locally favorable.
 - Equality defines the *onset condition* in this model, subject to the range of validity of its logarithmic line-energy expression.
 
-### 3.6 Physical interpretation and limits
+### 4.6 Physical interpretation and limits
 
 The key trend for the physically relevant, thicker-film critical-thickness branch is
 
@@ -1096,5 +1100,116 @@ The deposition rate at 800 K is approximately 7.94 times higher.
 (c) At high temperatures, the process transitions from surface-reaction-controlled to diffusion-controlled growth. Reactant mass transport becomes the bottleneck, so further heating has a smaller effect on deposition rate.
 
 ---
+## 5. Sputtering and Plasma Processing (PVD)
+
+> **Key concept:** Deposited atoms originate from the **target**, not the substrate. Most sputtered species are **neutral atoms**; a smaller fraction may be ionized.
+
+### 5.1 Mechanism: plasma to deposited film
+
+$$
+\boxed{\text{Plasma generation}\rightarrow\text{Ion acceleration}\rightarrow\text{Target sputtering}\rightarrow\text{Transport}\rightarrow\text{Film growth}}
+$$
+
+1. **Ionization:** $\mathrm{Ar}+e^-\rightarrow\mathrm{Ar}^++2e^-$.
+2. **Acceleration:** positive argon ions cross the sheath toward a negatively biased target. The force is $\mathbf F=q\mathbf{\mathcal E}$, and their approximate energy gain is
+
+   $$E_{\mathrm{ion}}\simeq e(V_{\mathrm{plasma}}-V_{\mathrm{target}}).$$
+
+3. **Sputtering:** ion impact initiates collision cascades that eject target atoms.
+4. **Transport and growth:** ejected species reach the substrate and condense. Adding reactive gas (e.g., $\mathrm O_2$ or $\mathrm N_2$) can form oxides or nitrides.
+
+### 5.2 Sputter yield and collision energetics
+
+$$
+\boxed{Y_s=\frac{N_{\mathrm{sputtered\ atoms}}}{N_{\mathrm{incident\ ions}}}}
+$$
+
+The yield is dimensionless (commonly stated as atoms/ion). It depends on ion energy, incidence angle, target binding energy, and ion/target masses. Below a material- and geometry-dependent threshold, sputtering is negligible.
+
+For a head-on, two-body **elastic** collision with a stationary target atom:
+
+$$
+\boxed{\gamma_m=\frac{4M_iM_t}{(M_i+M_t)^2}},\qquad
+\boxed{E_{\mathrm{transfer,max}}=\gamma_m E_{\mathrm{incident}}}.
+$$
+
+Maximum transfer occurs for $M_i=M_t$. This is a collision limit, **not** a complete sputter-yield or threshold-energy model.
+
+### 5.3 Pressure, mean free path, and deposition
+
+For an ideal hard-sphere gas,
+
+$$
+\boxed{\lambda=\frac{k_BT}{\sqrt{2}\pi d_g^2P}},\qquad \lambda\propto P^{-1}\quad(T\ \text{fixed}).
+$$
+
+| Pressure | Plasma behavior | Sputtered-atom transport |
+|---|---|---|
+| Very low | Too few ionizing collisions can prevent breakdown or sustaining a discharge | Long mean free path; less scattering |
+| Intermediate | Often practical operating range | Balance between ionization and transport |
+| High | Frequent collisions can impede electron energy gain at fixed field | More scattering and thermalization; reduced directional flux |
+
+There is **no universal optimum pressure**: geometry, magnetic confinement, power, and gas composition matter. The hard-sphere mean free path is a qualitative guide; energetic sputtered atoms have energy-dependent collision cross sections.
+
+### 5.4 Preferential sputtering of binary alloys
+
+If $Y_A>Y_B$, element A is preferentially ejected from an initially bulk-composition surface. In a simplified independent-yield model,
+
+$$
+\boxed{\frac{\Phi_A}{\Phi_B}=\frac{Y_A C_A^S}{Y_B C_B^S}}.
+$$
+
+Here $C_i^S$ is the surface atomic fraction and $\Phi_i$ is the ejected atomic flux. As sputtering proceeds, A becomes depleted at the target surface. If a homogeneous bulk continuously replenishes the surface, with no segregation, preferential diffusion, or other losses, steady-state conservation gives
+
+$$
+\frac{\Phi_A}{\Phi_B}=\frac{C_A^{\mathrm{bulk}}}{C_B^{\mathrm{bulk}}}
+\quad\Longrightarrow\quad
+\boxed{\frac{C_A^S}{C_B^S}=\frac{Y_B}{Y_A}\frac{C_A^{\mathrm{bulk}}}{C_B^{\mathrm{bulk}}}}.
+$$
+
+This **ideal steady-state** result does not guarantee that the deposited film has exactly the bulk composition: gas scattering, sticking, and resputtering can change film composition.
+
+### 5.5 DC, RF, and magnetron sputtering
+
+| Method | Principle | Typical use or consequence |
+|---|---|---|
+| **DC** | Constant target bias | Conducting targets; insulating surfaces can charge up |
+| **RF** | Oscillating excitation and time-averaged sheath | Enables insulating targets |
+| **Magnetron** | Magnetic confinement increases electron residence near target | Higher ionization efficiency; characteristic erosion racetrack; may be DC or RF |
+
+### 5.6 Homework 4, Q2 — Sputtering and Paschen's law (3 pts.)
+
+**Given:** parallel electrodes separated by $d=5.0\ \mathrm{cm}$, applied voltage $V=500\ \mathrm V$, argon gas, and the course's printed constants $A=12$, $B=180$.
+
+**(a) Minimum pressure for breakdown.** The typed statement of the supplied law is ambiguous (`VB=APdln Pd +B`), while a previous transcription showed an unconventional double logarithm. **Do not use a numerical pressure until the exact original equation, parentheses, and units of A and B are confirmed.**
+
+The conventional Townsend–Paschen expression is
+
+$$
+\boxed{V_B=\frac{B_P Pd}{\ln(A_P Pd)-\ln\!\left[\ln\!\left(1+\frac1{\gamma_{\mathrm{se}}}\right)\right]}}
+$$
+
+where $A_P$ has units of $(\mathrm{pressure}\cdot\mathrm{length})^{-1}$, $B_P$ has units of $\mathrm{V}/(\mathrm{pressure}\cdot\mathrm{length})$, and $\gamma_{\mathrm{se}}$ is the secondary-electron emission coefficient. The logarithm arguments must be dimensionless. A breakdown-pressure calculation also requires the appropriate coefficients and valid model domain. The minimum **pressure at a fixed applied voltage** corresponds to the lower-pressure intersection of $V_B(Pd)$ with 500 V, if intersections exist; it is not necessarily the Paschen-curve minimum.
+
+The nominal average electric field before breakdown is
+
+$$\boxed{|\mathcal E|\approx\frac{V}{d}=\frac{500\ \mathrm V}{5.0\ \mathrm{cm}}=100\ \mathrm{V/cm}}.$$
+
+**(b) Why not arbitrarily low or high pressure?** At low $P$, the mean free path becomes long and ionizing collisions are too rare. At high $P$, electrons undergo many collisions and may not acquire sufficient ionization energy between them at fixed voltage and gap. Thus the breakdown voltage generally has a minimum versus $Pd$ (Paschen curve).
+
+**(c) Why argon rather than oxygen?** Argon is inert and reduces unwanted target oxidation. Oxygen is chemically reactive and may change the target surface, yield, and film composition. Oxygen is intentionally added for **reactive sputtering** of oxides.
+
+### 5.7 Sputtering equation sheet
+
+| Equation | Use |
+|---|---|
+| $\mathbf F=q\mathbf{\mathcal E}$ | Force on charged particles |
+| $E_{\mathrm{ion}}\simeq e\Delta V$ | Ion energy gain across a sheath |
+| $Y_s=N_{\mathrm{sputtered}}/N_{\mathrm{ions}}$ | Sputter yield |
+| $\gamma_m=4M_iM_t/(M_i+M_t)^2$ | Maximum two-body elastic energy-transfer fraction |
+| $\lambda=k_BT/(\sqrt2\pi d_g^2P)$ | Hard-sphere gas mean free path |
+| $\Phi_A/\Phi_B=Y_AC_A^S/(Y_BC_B^S)$ | Binary-alloy sputtered-flux ratio |
+| $C_A^S/C_B^S=(Y_B/Y_A)(C_A^{\mathrm{bulk}}/C_B^{\mathrm{bulk}})$ | Ideal steady-state surface composition |
+
 
 
