@@ -520,6 +520,8 @@ $$
 #### 2.8.4 Temperature regimes: freeze-out, extrinsic, intrinsic
 
 A plot of $\ln n$ against $1/T$ often shows three approximate regimes for donor-doped material:
+<img width="887" height="661" alt="Screenshot 2026-10-25 at 6 39 16 PM" src="https://github.com/user-attachments/assets/e79b96f2-5942-410e-b792-87d4abbdebea" />
+
 
 | Regime | Mechanism | Approximate $n(T)$ | $\ln n$ vs. $1/T$ |
 |---|---|---|---|
