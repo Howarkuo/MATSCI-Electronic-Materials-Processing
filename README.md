@@ -880,6 +880,221 @@ where $A$ is junction area, $D_n,D_p$ are minority-carrier diffusion coefficient
 
 
 
-## Thin film Deposition and Epitaxy
+# Thin film Deposition and Epitaxy
+## 3. Epitaxy: Lattice Mismatch, Strain Accommodation, and Critical Thickness
+
+### 3.1 What is epitaxy?
+
+**Epitaxy** is the growth of a crystalline film whose crystallographic orientation is related to that of the underlying substrate. Atomic bonding and the crystalline template at the interface guide the deposited film's orientation.
+
+| Configuration | Physical meaning | Typical characteristic |
+|---|---|---|
+| **Lattice matched** | Film and substrate have equal (or nearly equal) relevant in-plane lattice spacing | Little or no mismatch strain |
+| **Coherent / strained** | Film conforms to the substrate's in-plane lattice spacing | Elastic strain; no misfit dislocations at the ideal interface |
+| **Relaxed** | Film accommodates mismatch without remaining fully coherent | May form misfit dislocations, islands, or other relaxation structures |
+
+- **Homoepitaxy:** growth on the same material, e.g., Si on Si.
+- **Heteroepitaxy:** growth on a different material, e.g., SiGe on Si.
+- Coherent heteroepitaxy constrains the film's **in-plane** lattice parameter to match the substrate; out-of-plane spacing may change through the Poisson effect.
+
+### 3.2 Lattice mismatch and mechanical strain
+
+Using the **symmetric lattice-mismatch convention** from the lecture:
+
+$$
+\boxed{f=\frac{2(a_f-a_s)}{a_f+a_s}}
+$$
+
+For small mismatch:
+
+$$
+\boxed{f\approx\frac{a_f-a_s}{a_s}}
+$$
+
+where $a_f$ and $a_s$ are the *relaxed* lattice parameters of film and substrate, respectively. The second expression is a small-mismatch approximation, **not** an exact identity.
+
+For a coherent film on a much thicker, effectively rigid substrate, its in-plane engineering strain (referenced to the unstrained film) is
+
+$$
+\boxed{\varepsilon_{\parallel}=\frac{a_s-a_f}{a_f}\approx-f.}
+$$
+
+| Mismatch | Relative lattice parameters | Coherent-film in-plane strain |
+|---|---|---|
+| $f>0$ | $a_f>a_s$ | Compressive: $\varepsilon_{\parallel}<0$ |
+| $f<0$ | $a_f<a_s$ | Tensile: $\varepsilon_{\parallel}>0$ |
+| $f=0$ | $a_f=a_s$ | No lattice-mismatch strain |
+
+> **Exam pitfall:** The sign of the *lattice mismatch* and the sign of the *mechanical in-plane strain* are opposite under these definitions. Different references may define mismatch with the opposite sign, so always inspect the convention.
+
+### 3.3 Four ways epitaxial films accommodate mismatch
+
+| Mechanism | How it reduces the energy | Key consequence |
+|---|---|---|
+| **A. Elastic accommodation** | Film deforms without permanently breaking crystallographic coherence | Stored elastic strain energy |
+| **B. Surface roughening / islanding** | Nonuniform geometry permits partial strain relaxation | Increased surface/interface area |
+| **C. Interdiffusion** | Compositional grading changes the local relaxed lattice parameter | Mixed or graded interface |
+| **D. Plastic relaxation** | Misfit dislocations introduce lattice slip at or near the interface | Permanent crystallographic defects |
+
+These mechanisms can coexist. A coherent film is not necessarily relaxed, and a relaxed film need not relax *exclusively* through dislocations.
+
+### 3.4 Total-energy model for plastic relaxation
+
+In the simplified lecture model, the **total energy per unit substrate area** is
+
+$$
+\boxed{E_{\mathrm{total}}(L,h)=E_{\mathrm{el}}(L,h)+E_{\mathrm{dis}}(L,h)}
+$$
+
+with
+
+$$
+\boxed{E_{\mathrm{el}}=k_1h(f-k_2L)^2}
+$$
+
+$$
+\boxed{E_{\mathrm{dis}}=k_3L\ln(k_4h)}.
+$$
+
+| Symbol | Physical interpretation | SI units |
+|---|---|---|
+| $h$ | Epitaxial-film thickness | m |
+| $f$ | Initial lattice mismatch, signed using a chosen convention | 1 |
+| $L$ | Total misfit-dislocation line length per unit interface area | m$^{-1}$ |
+| $k_1$ | Elastic energy coefficient, of the order of a biaxial modulus | Pa = J m$^{-3}$ |
+| $k_2$ | Effective mismatch-relieving Burgers-vector component | m |
+| $k_3$ | Dislocation line-energy prefactor | J m$^{-1}$ |
+| $k_4$ | Inverse characteristic core length (ensures dimensionless logarithm) | m$^{-1}$ |
+
+In the **positive-mismatch** convention with appropriately oriented relaxing dislocations,
+
+$$
+\boxed{f_{\mathrm{res}}=f-k_2L.}
+$$
+
+This simplified expression assumes $L\ge0$, $k_2>0$, and a dislocation orientation that actually relieves the mismatch. For negative mismatch, choose the opposite relieving Burgers-vector sign or reformulate the model using $|f|$.
+
+**Energy tradeoff:**
+
+- Without dislocations, $L=0$, so $E_{\mathrm{el}}(0,h)=k_1hf^2$.
+- Adding correctly oriented dislocations reduces $|f_{\mathrm{res}}|$ and therefore the elastic energy initially.
+- Creating dislocations also costs line energy; the logarithmic approximation must be used only within its physically meaningful range (in particular, where $\ln(k_4h)>0$).
+
+### 3.5 Derive the critical thickness $h_c$
+
+The model defines the onset of energetically favorable dislocation introduction by the **one-sided derivative at the coherent state**:
+
+$$
+\boxed{\left.\frac{\partial E_{\mathrm{total}}}{\partial L}\right|_{L\to0^+}=0.}
+$$
+
+**Step 1 — Substitute both energy terms.**
+
+$$
+E_{\mathrm{total}}=k_1h(f-k_2L)^2+k_3L\ln(k_4h).
+$$
+
+**Step 2 — Differentiate with respect to $L$, keeping $h$ fixed.**
+
+$$
+\begin{aligned}
+\frac{\partial E_{\mathrm{total}}}{\partial L}
+&=2k_1h(f-k_2L)(-k_2)+k_3\ln(k_4h)\\
+&=\boxed{-2k_1k_2h(f-k_2L)+k_3\ln(k_4h)}.
+\end{aligned}
+$$
+
+**Step 3 — Evaluate at the dislocation-free state, $L=0$.**
+
+$$
+\left.\frac{\partial E_{\mathrm{total}}}{\partial L}\right|_{L=0^+}
+=-2k_1k_2hf+k_3\ln(k_4h).
+$$
+
+**Step 4 — Set the derivative to zero at $h=h_c$.**
+
+$$
+-2k_1k_2h_cf+k_3\ln(k_4h_c)=0
+$$
+
+$$
+2k_1k_2h_cf=k_3\ln(k_4h_c).
+$$
+
+Rearranging gives the **implicit critical-thickness equation**:
+
+$$
+\boxed{h_c=\frac{k_3}{2k_1k_2f}\ln(k_4h_c)}
+\qquad (f>0,\ \text{relieving orientation}).
+$$
+
+When using the corresponding mismatch-relieving magnitude, the commonly quoted form is
+
+$$
+\boxed{h_c=\frac{k_3}{2k_1k_2|f|}\ln(k_4h_c).}
+$$
+
+The coefficient units are consistent: $k_3/(k_1k_2)$ has units of length, and $k_4h_c$ is dimensionless.
+
+**Interpret the derivative's sign:**
+
+- If $\left.\partial E_{\mathrm{total}}/\partial L\right|_{0^+}>0$, creating an infinitesimal density of dislocations raises the energy; the coherent state is locally favorable.
+- If $\left.\partial E_{\mathrm{total}}/\partial L\right|_{0^+}<0$, a small density of relaxing dislocations lowers the energy; the coherent state is no longer locally favorable.
+- Equality defines the *onset condition* in this model, subject to the range of validity of its logarithmic line-energy expression.
+
+### 3.6 Physical interpretation and limits
+
+The key trend for the physically relevant, thicker-film critical-thickness branch is
+
+$$
+\boxed{\text{Larger }|f|\ \Longrightarrow\ \text{smaller equilibrium critical thickness }h_c.}
+$$
+
+**Why?** Elastic energy per area scales as $hf^2$ for a fully coherent film, so a more mismatched film has a larger strain-energy penalty and becomes energetically motivated to relax at smaller thickness.
+
+**Important qualifications:**
+
+1. This equation is **implicit**; $h_c$ appears both inside and outside the logarithm, so numerical iteration or root finding is usually used.
+2. The logarithmic approximation can yield mathematically multiple roots or no physical root for some parameter choices. Choose only a solution within the model's thickness and core-length validity range; the thicker-film branch is the one normally associated with relaxation onset.
+3. The result predicts an **energetic/equilibrium onset**, not necessarily the experimentally observed thickness. Dislocation nucleation barriers and growth kinetics can preserve metastable coherency beyond the predicted threshold.
+4. Numerical values of $k_1,\ldots,k_4$ and the dislocation geometry are necessary for a **quantitative** prediction for a particular materials system (such as SiGe/Si).
+
+**Illustrative only:** A chart that reports an arbitrary-unit critical thickness (e.g., 64.46 at 1% mismatch) without specifying the coefficients should not be interpreted as a thickness in nanometers or as a real SiGe/Si prediction.
+
+### 3.7 Quick equation review
+
+| Concept | Equation |
+|---|---|
+| Symmetric lattice mismatch | $\displaystyle f=\frac{2(a_f-a_s)}{a_f+a_s}$ |
+| Small-mismatch approximation | $\displaystyle f\approx\frac{a_f-a_s}{a_s}$ |
+| Coherent-film in-plane strain | $\displaystyle \varepsilon_{\parallel}=\frac{a_s-a_f}{a_f}\approx-f$ |
+| Residual mismatch | $\displaystyle f_{\mathrm{res}}=f-k_2L$ |
+| Elastic energy per area | $\displaystyle E_{\mathrm{el}}=k_1h(f-k_2L)^2$ |
+| Dislocation energy per area | $\displaystyle E_{\mathrm{dis}}=k_3L\ln(k_4h)$ |
+| Onset criterion | $\displaystyle \left.\partial E_{\mathrm{total}}/\partial L\right|_{0^+}=0$ |
+| Critical thickness | $\displaystyle h_c=\frac{k_3}{2k_1k_2|f|}\ln(k_4h_c)$ |
+
+
+ ### HW4 Q4> CVD
+	A silicon thin film is deposited through the thermal decomposition of silane:
+SiH4g→Sis+2H2g
+(1 pt.) Explain the difference between a surface reaction-controlled and a diffusion-controlled CVD process.
+(1 pts.) For a sR=R0e-Ea/kBTIf the activation energy is 1.0 eV, calculate the ratio of deposition rates at 700 K and 800 K.
+(1 pt.) Explain why increasing the temperature beyond a certain point may no longer significantly increase the deposition rate.urface reaction-controlled process, the deposition rate primarily follows an Arrhenius relationship:
+
+
+
+(a) Surface reaction-controlled CVD is limited by the chemical reaction at the substrate (\(k_s\ll h_g\)), while diffusion-controlled CVD is limited by reactant transport through the gas boundary layer (\(k_s\gg h_g\)).
+
+(b)
+$$
+\boxed{\frac{R_{800}}{R_{700}}=7.94}\
+$$
+
+The deposition rate at 800 K is approximately 7.94 times higher.
+
+(c) At high temperatures, the process transitions from surface-reaction-controlled to diffusion-controlled growth. Reactant mass transport becomes the bottleneck, so further heating has a smaller effect on deposition rate.
+
+---
 
 
