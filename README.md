@@ -423,6 +423,269 @@ Thus **$E_i$ is near midgap, but is exactly at midgap only if $N_C=N_V$.**
 
 > Values are rounded course-level estimates, not universal constants.
 
+### 2.8 Doping, Extrinsic Semiconductors, and Charge Neutrality
+
+#### 2.8.1 Charge neutrality and ionized dopants
+
+At equilibrium, a macroscopically neutral, uniformly doped bulk semiconductor obeys
+
+$$
+\boxed{n+N_A^-=p+N_D^+}
+$$
+
+or equivalently
+
+$$
+\boxed{n+N_A^- -p-N_D^+=0.}
+$$
+
+- $n$: free conduction electrons, $p$: valence-band holes (both in $\mathrm{cm^{-3}}$).
+- $N_D^+$: **ionized donors** (positively charged after donating an electron).
+- $N_A^-$: **ionized acceptors** (negatively charged after accepting an electron).
+- $N_D$, $N_A$: total donor and acceptor concentrations, which are not always equal to $N_D^+$ and $N_A^-$.  
+
+> **Scope:** Local charge neutrality is a bulk approximation. It generally does not hold pointwise in depletion regions or space-charge layers; there Poisson's equation describes the charge distribution.
+
+For **complete ionization**, $N_D^+\simeq N_D$ and $N_A^-\simeq N_A$, so
+
+$$
+\boxed{n-p=N_D-N_A.}
+$$
+
+Combine this with the nondegenerate, thermal-equilibrium mass-action law $np=n_i^2$:
+
+$$
+\boxed{n=\frac{(N_D-N_A)+\sqrt{(N_D-N_A)^2+4n_i^2}}{2}}
+$$
+
+$$
+\boxed{p=\frac{(N_A-N_D)+\sqrt{(N_D-N_A)^2+4n_i^2}}{2}.}
+$$
+
+These formulas handle **compensated (counter-doped) semiconductors** and both carrier types.
+
+#### 2.8.2 N-type and P-type limits
+
+**N-type:** If $N_D-N_A\gg n_i$ and the dopants are fully ionized,
+
+$$
+\boxed{n\simeq N_D-N_A,\qquad p\simeq\frac{n_i^2}{N_D-N_A}.}
+$$
+
+**P-type:** If $N_A-N_D\gg n_i$ and the dopants are fully ionized,
+
+$$
+\boxed{p\simeq N_A-N_D,\qquad n\simeq\frac{n_i^2}{N_A-N_D}.}
+$$
+
+The inequalities establish when majority-carrier concentrations are approximately the **net dopant** concentrations—not necessarily the individual dopant concentrations.
+
+#### 2.8.3 How doping shifts the Fermi level
+
+With Boltzmann (nondegenerate) carrier statistics,
+
+$$
+\boxed{n=N_C\exp\!\left(-\frac{E_C-E_F}{k_BT}\right)}
+$$
+
+Taking logarithms and rearranging:
+
+$$
+\ln\!\left(\frac{n}{N_C}\right)=-\frac{E_C-E_F}{k_BT}
+$$
+
+$$
+\boxed{E_C-E_F=k_BT\ln\!\left(\frac{N_C}{n}\right).}
+$$
+
+Similarly for holes,
+
+$$
+\boxed{p=N_V\exp\!\left(-\frac{E_F-E_V}{k_BT}\right)}
+$$
+
+$$
+\boxed{E_F-E_V=k_BT\ln\!\left(\frac{N_V}{p}\right).}
+$$
+
+**At fixed temperature:** N-type doping raises $n$, moving $E_F$ **toward $E_C$**; P-type doping raises $p$, moving $E_F$ **toward $E_V$**. These logarithmic equations become inaccurate when the Fermi level enters a band (degenerate doping), in which case Fermi–Dirac integrals are needed.
+
+Relative to the intrinsic Fermi level $E_i$:
+
+$$
+\boxed{n=n_i\exp\!\left(\frac{E_F-E_i}{k_BT}\right),\qquad
+p=n_i\exp\!\left(\frac{E_i-E_F}{k_BT}\right).}
+$$
+
+#### 2.8.4 Temperature regimes: freeze-out, extrinsic, intrinsic
+
+A plot of $\ln n$ against $1/T$ often shows three approximate regimes for donor-doped material:
+
+| Regime | Mechanism | Approximate $n(T)$ | $\ln n$ vs. $1/T$ |
+|---|---|---|---|
+| Low $T$: **freeze-out** | Donors are only partially ionized | $\propto T^{3/4}e^{-(E_C-E_D)/(2k_BT)}$ in the simplified asymptotic limit below | Negative slope approximately $-(E_C-E_D)/(2k_B)$ |
+| Intermediate $T$: **extrinsic plateau** | Donors substantially ionized, intrinsic carriers negligible | $n\simeq N_D-N_A$ | Approximately horizontal, slope $\simeq0$ |
+| High $T$: **intrinsic** | Thermal electron–hole pairs dominate | $n\simeq n_i\propto T^{3/2}e^{-E_g/(2k_BT)}$ for fixed gap and masses | Negative approximate slope $-E_g/(2k_B)$ |
+
+Because $1/T$ runs from **high temperature on the left** to **low temperature on the right**, interpret the plot axis carefully.
+
+**Donor freeze-out derivation** (negligible acceptors and holes, nondegenerate electrons):
+
+One common donor occupancy convention is
+
+$$
+N_D^+=\frac{N_D}{1+g_D\exp[(E_F-E_D)/(k_BT)]}.
+$$
+
+Here $g_D$ is the donor degeneracy factor under this convention (commonly $g_D=2$). In the freeze-out limit, when $g_D\exp[(E_F-E_D)/(k_BT)]\gg1$,
+
+$$
+\boxed{N_D^+\simeq\frac{N_D}{g_D}\exp\!\left(-\frac{E_F-E_D}{k_BT}\right).}
+$$
+
+Using charge neutrality $n\simeq N_D^+$ and the conduction-electron formula,
+
+$$
+n=N_C\exp\!\left(-\frac{E_C-E_F}{k_BT}\right)
+\simeq\frac{N_D}{g_D}\exp\!\left(-\frac{E_F-E_D}{k_BT}\right).
+$$
+
+Multiply the two expressions for $n$ to eliminate $E_F$:
+
+$$
+\boxed{n^2\simeq\frac{N_CN_D}{g_D}\exp\!\left(-\frac{E_C-E_D}{k_BT}\right).}
+$$
+
+Thus
+
+$$
+\boxed{n\simeq\sqrt{\frac{N_CN_D}{g_D}}\exp\!\left(-\frac{E_C-E_D}{2k_BT}\right).}
+$$
+
+Define the donor activation energy $\Delta E_D=E_C-E_D$. Since $N_C(T)\propto T^{3/2}$,
+
+$$
+\ln n \simeq \underbrace{\text{constant}+\frac34\ln T}_{\text{slowly varying prefactor}}
+-\frac{\Delta E_D}{2k_B}\frac1T.
+$$
+
+Treating the prefactor as approximately constant gives
+
+$$
+\boxed{\frac{d(\ln n)}{d(1/T)}\simeq-\frac{\Delta E_D}{2k_B}.}
+$$
+
+More accurately, if $\Delta E_D$ and effective mass are temperature independent,
+
+$$
+\frac{d(\ln n)}{d(1/T)}\simeq-\frac{\Delta E_D}{2k_B}-\frac34T.
+$$
+
+At the **extrinsic plateau**, $n\simeq N_D-N_A$ is nearly independent of temperature, and therefore
+
+$$
+\boxed{\frac{d(\ln n)}{d(1/T)}\simeq0.}
+$$
+
+> **Exam caution:** The freeze-out formula assumes a single shallow donor species and negligible compensation. Degeneracy conventions for $g_D$ differ across textbooks; use a consistent definition. Also, the plateau slope is approximate, not a universal exact zero.
+
+![Carrier concentration versus inverse temperature: freeze-out, extrinsic, and intrinsic regimes](https://hackmd.io/_uploads/ByCotb2nfg.png)
+
+#### 2.8.5 Homework Practice — Q6: Phosphorus doping and boron counter-doping
+
+**Given (silicon):** $n_i(300\,\mathrm K)=1.0\times10^{10}\,\mathrm{cm^{-3}}$, $E_g=1.12\,\mathrm{eV}$, $N_D=N_P=1.0\times10^{15}\,\mathrm{cm^{-3}}$. Use $k_B=8.61733\times10^{-5}\,\mathrm{eV/K}$, $N_C(300\,\mathrm K)=2.8\times10^{19}\,\mathrm{cm^{-3}}$, and $N_V(300\,\mathrm K)=1.04\times10^{19}\,\mathrm{cm^{-3}}$. Assume full dopant ionization throughout.
+
+**(a) Is phosphorus a donor or acceptor?**  
+Phosphorus is a Group V element with five valence electrons; substituting it for Group IV silicon introduces a shallow donor level. The wafer is **N-type** before counter-doping.
+
+**(b) Find $n$, $p$, and $E_C-E_F$ at 300 K.**
+
+$$
+\boxed{n\simeq N_D=1.00\times10^{15}\,\mathrm{cm^{-3}}}
+$$
+
+$$
+\boxed{p=\frac{n_i^2}{n}=1.00\times10^5\,\mathrm{cm^{-3}}}
+$$
+
+$$
+\begin{aligned}
+E_C-E_F&=k_BT\ln\!\left(\frac{N_C}{n}\right)\\
+&=(8.61733\times10^{-5})(300)\ln\!\left(\frac{2.8\times10^{19}}{1.0\times10^{15}}\right)\\
+&\boxed{\simeq0.265\,\mathrm{eV}.}
+\end{aligned}
+$$
+
+**(c) Find boron concentration if the desired Fermi level is 0.35 eV below the intrinsic level at 300 K.**
+
+The **most direct approach** avoids approximating $E_i$ as midgap:
+
+$$
+E_F=E_i-0.35\,\mathrm{eV},\qquad
+p=n_i\exp\!\left(\frac{E_i-E_F}{k_BT}\right).
+$$
+
+$$
+\begin{aligned}
+p&=(1.0\times10^{10})\exp\!\left(\frac{0.35}{(8.61733\times10^{-5})(300)}\right)\\
+&\boxed{\simeq7.58\times10^{15}\,\mathrm{cm^{-3}}.}
+\end{aligned}
+$$
+
+The minority-electron concentration is $n=n_i^2/p\simeq1.32\times10^4\,\mathrm{cm^{-3}}$. With both boron acceptors and existing phosphorus donors fully ionized,
+
+$$
+p-n=N_B-N_P
+$$
+
+$$
+\boxed{N_B=p-n+N_P\simeq8.58\times10^{15}\,\mathrm{cm^{-3}}.}
+$$
+
+**Why the earlier $7.97\times10^{15}$ answer was inconsistent:** It estimated $E_i-E_V\simeq E_g/2$ while simultaneously using an independent $N_V$. The exact $E_i$ follows $p=n_i$, i.e. $E_i-E_V=k_BT\ln(N_V/n_i)\simeq0.537$ eV for the given constants, rather than $0.560$ eV. In particular, $p=n_i e^{0.35/k_BT}$ is sufficient here.
+
+**(d) Find $E_C-E_F$ at 600 K for the counter-doped wafer; keep $E_g$ constant.**
+
+Assuming temperature-independent effective masses, $N_C$ and $N_V$ scale as $T^{3/2}$:
+
+$$
+N_C(600)=N_C(300)\left(\frac{600}{300}\right)^{3/2}
+\simeq7.92\times10^{19}\,\mathrm{cm^{-3}}
+$$
+
+$$
+N_V(600)\simeq2.94\times10^{19}\,\mathrm{cm^{-3}}.
+$$
+
+Use the **band-parameter expression** for intrinsic concentration at 600 K:
+
+$$
+\begin{aligned}
+n_i(600)&=\sqrt{N_C(600)N_V(600)}\exp\!\left(-\frac{E_g}{2k_B(600)}\right)\\
+&\boxed{\simeq9.55\times10^{14}\,\mathrm{cm^{-3}}.}
+\end{aligned}
+$$
+
+Net acceptor concentration from part (c): $\Delta N=N_B-N_D\simeq7.58\times10^{15}\,\mathrm{cm^{-3}}$. Apply $p-n=\Delta N$ and $np=n_i(600)^2$:
+
+$$
+\boxed{p=\frac{\Delta N+\sqrt{\Delta N^2+4n_i(600)^2}}2
+\simeq7.70\times10^{15}\,\mathrm{cm^{-3}}.}
+$$
+
+$$
+\boxed{n=\frac{n_i(600)^2}{p}\simeq1.18\times10^{14}\,\mathrm{cm^{-3}}.}
+$$
+
+Finally,
+
+$$
+\begin{aligned}
+E_C-E_F&=k_B(600)\ln\!\left(\frac{N_C(600)}{n}\right)\\
+&\boxed{\simeq0.694\,\mathrm{eV}.}
+\end{aligned}
+$$
+
 ## 3. Quick Equation Sheet
 
 | Quantity | Formula | Use / condition |
