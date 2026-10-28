@@ -1,3 +1,4 @@
+<img width="762" height="346" alt="Screenshot 2026-10-28 at 3 45 08 PM" src="https://github.com/user-attachments/assets/0ef39cd4-5dd4-47e4-ba7f-6c6b5828e250" />
 # MATSCI123-Electronic-Materials-Processing
 
 ## Textbook Source 
@@ -2130,6 +2131,8 @@ The deposition rate at 800 K is approximately 7.94 times higher.
 ## 5. Sputtering and Plasma Processing (PVD)
 
 > **Key concept:** Deposited atoms originate from the **target**, not the substrate. Most sputtered species are **neutral atoms**; a smaller fraction may be ionized.
+
+<img width="717" height="353" alt="Screenshot 2026-10-28 at 3 45 28 PM" src="https://github.com/user-attachments/assets/9fa46ea1-ac24-4d90-845d-bd0d8d2fbd1a" />
 
 ### 5.1 Mechanism: plasma to deposited film
 
