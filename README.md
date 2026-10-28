@@ -1908,6 +1908,7 @@ These are related concepts, but each answers a different physical question.
 
 # Thin film Deposition and Epitaxy
 
+<img width="879" height="585" alt="Screenshot 2026-10-28 at 3 19 35 PM" src="https://github.com/user-attachments/assets/89b8120d-2860-4f6a-9d6d-9009917e5123" />
 
 
 
