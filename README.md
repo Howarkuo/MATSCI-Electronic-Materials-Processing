@@ -1,4 +1,3 @@
-<img width="762" height="346" alt="Screenshot 2026-10-28 at 3 45 08 PM" src="https://github.com/user-attachments/assets/0ef39cd4-5dd4-47e4-ba7f-6c6b5828e250" />
 # MATSCI123-Electronic-Materials-Processing
 
 ## Textbook Source 
