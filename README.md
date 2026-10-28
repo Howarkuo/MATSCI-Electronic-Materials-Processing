@@ -722,6 +722,8 @@ $$
 > **Assumptions unless noted:** one-dimensional abrupt silicon PN junction, thermal equilibrium, nondegenerate statistics, fully ionized dopants, uniform doping outside the junction, and depletion approximation for electrostatics. Use $q>0$ for the **magnitude** of elementary charge, $k_B$ for Boltzmann's constant, and $\mathcal E$ for electric field.
 
 ### 3.1 Carrier transport: drift and diffusion
+<img width="977" height="707" alt="Screenshot 2026-10-28 at 1 21 46 PM" src="https://github.com/user-attachments/assets/b265900c-64e2-48cf-9b01-084b81f44160" />
+
 
 | Mechanism | Driving force | Carrier motion |
 |---|---|---|
@@ -877,6 +879,1030 @@ where $A$ is junction area, $D_n,D_p$ are minority-carrier diffusion coefficient
 - **Moderate reverse bias** ($V\ll-V_T$): $I\approx-I_0$ in the ideal model, before breakdown. The diffusion of minority carriers through the quasi-neutral regions supplies this saturation current; the depletion-region field then sweeps arriving carriers across by **drift**.
 
 > **Exam traps:** (1) *electron motion* and *electron conventional current* have opposite directions; (2) positive donor ions are on the **n-side**, negative acceptor ions on the **p-side**; (3) $J_n=J_p=0$ only at **thermal equilibrium** (not under an applied diode bias); (4) $\phi_{bi}$ is a voltage, whereas $q\phi_{bi}$ is an energy; (5) forward bias *reduces* the barrier and width; (6) neither the depletion approximation nor the ideal Shockley equation describes breakdown.
+
+
+# Topic 4 — Semiconductor Mobility and Devices: Recombination, Solar Cells, PN Junctions, and Metal Contacts
+
+MSE 123 — Electronic Materials Processing. Consolidated study notes on effective mass, carrier mobility, scattering, conductivity, recombination, solar cells, PN junctions, breakdown, and metal–semiconductor contacts.
+
+## Contents
+
+- [4.1 What is carrier mobility?](#41-what-is-carrier-mobility)
+- [4.2 Why do electrons generally have higher mobility than holes?](#42-why-do-electrons-generally-have-higher-mobility-than-holes)
+- [4.3 Why does scattering reduce mobility?](#43-why-does-scattering-reduce-mobility)
+- [4.4 Why does the mobility–temperature curve have a maximum?](#44-why-does-the-mobilitytemperature-curve-have-a-maximum)
+- [4.5 How do we combine two scattering mechanisms?](#45-how-do-we-combine-two-scattering-mechanisms)
+- [4.6 Why does increasing dopant concentration decrease mobility?](#46-why-does-increasing-dopant-concentration-decrease-mobility)
+- [4.7 How mobility affects conductivity](#47-how-mobility-affects-conductivity)
+- [4.8 Exam equations to memorize](#48-exam-equations-to-memorize)
+- [4.9 Final conceptual connection](#49-final-conceptual-connection)
+- [4.10 Recombination — Slide 17](#410-recombination-slide-17)
+- [4.11 Solar cell physics — Slides 18 and Basic Solar Cell Structure](#411-solar-cell-physics-slides-18-and-basic-solar-cell-structure)
+- [4.12 Electrical conductivity — Slide 18](#412-electrical-conductivity-slide-18)
+- [4.13 Forward and reverse bias — Slide 20](#413-forward-and-reverse-bias-slide-20)
+- [4.14 Reverse breakdown — Slide 21](#414-reverse-breakdown-slide-21)
+- [4.15 Metal–semiconductor junctions — Slide 19](#415-metalsemiconductor-junctions-slide-19)
+- [4.16 Schottky versus ohmic contacts](#416-schottky-versus-ohmic-contacts)
+- [4.17 Final connection to solar-cell design](#417-final-connection-to-solar-cell-design)
+- [4.18 Key equations from these slides](#418-key-equations-from-these-slides)
+
+---
+
+### Mobility, scattering, and doping in silicon
+
+These notes connect our previous discussions of effective mass, charge carriers, and semiconductor doping to electrical conductivity.
+
+The central relationship is:
+
+
+```math
+\boxed{ \text{Effective mass + scattering} \rightarrow \text{Mobility} \rightarrow \text{Drift velocity} \rightarrow \text{Electrical conductivity} }
+```
+
+
+## 4.1 What is carrier mobility?
+
+Mobility $\mu$ measures how easily an electron or hole moves in response to an applied electric field.
+
+The drift-velocity relations are:
+
+For holes:
+
+
+```math
+\boxed{v_p=\mu_p\mathcal E}
+```
+
+
+For electrons:
+
+
+```math
+\boxed{v_n=-\mu_n\mathcal E}
+```
+
+
+Here the minus sign for electrons indicates that electrons drift opposite to the electric field.
+
+| Symbol           | Meaning                  | Unit      |
+| ---------------- | ------------------------ | --------- |
+| $\mu_n$      | Electron mobility        | cm²/(V·s) |
+| $\mu_p$      | Hole mobility            | cm²/(V·s) |
+| $v_n,v_p$    | Signed drift velocity    | cm/s      |
+| $\mathcal E$ | Electric field           | V/cm      |
+| $q$          | Elementary charge        | C         |
+| $\tau_m$     | Momentum relaxation time | s         |
+| $m^*$       | Carrier effective mass   | kg        |
+
+### Relationship between mobility and collision time
+
+The slide provides:
+
+
+```math
+\boxed{\mu_n=\frac{q\tau_{mn}}{m_n^*}}
+```
+
+
+
+```math
+\boxed{\mu_p=\frac{q\tau_{mp}}{m_p^*}}
+```
+
+
+Therefore:
+
+
+```math
+\boxed{\mu\propto\frac{\tau_m}{m^*}}
+```
+
+
+This connects to your earlier effective-mass slide:
+
+- Smaller effective mass → higher mobility, if scattering time is unchanged.
+- Longer relaxation time → higher mobility, if effective mass is unchanged.
+
+So an electron with a small effective mass and infrequent momentum-randomizing collisions can respond more strongly to an electric field.
+
+## 4.2 Why do electrons generally have higher mobility than holes?
+
+The lecture notes indicate:
+
+> Often n-type (electron) mobility is greater than p-type (hole) mobility.
+
+For silicon at 300 K, your third slide shows approximately:
+
+
+```math
+\boxed{\mu_n\approx1400\ \mathrm{cm^2/(V\\,s)}}
+```
+
+
+
+```math
+\boxed{\mu_p\approx450\ \mathrm{cm^2/(V\\,s)}}
+```
+
+
+at low impurity concentrations.
+
+From the mobility equation:
+
+
+```math
+\mu=\frac{q\tau_m}{m^*}
+```
+
+
+electrons and holes can have different effective masses and scattering times because they occupy different energy bands.
+
+Consequently:
+
+
+```math
+\boxed{\mu_n>\mu_p}
+```
+
+
+is typical for silicon under the conditions shown.
+
+It is not a universal rule for every semiconductor.
+
+## 4.3 Why does scattering reduce mobility?
+
+The first slide defines mobility through drift velocity, while the second connects it to scattering.
+
+Without scattering, a carrier would continue accelerating under an electric field.
+
+In a real semiconductor, the carrier repeatedly experiences interactions that change its momentum.
+
+Conceptual illustration: more frequent momentum-randomizing scattering reduces the average drift response. Actual carrier trajectories are microscopic and random.
+
+The two main scattering mechanisms from your slide are ionized impurity scattering and phonon scattering.
+
+<img width="950" height="719" alt="Screenshot 2026-10-28 at 1 23 08 PM" src="https://github.com/user-attachments/assets/22d23b19-5c80-4b7c-bdfd-baae4e1094cc" />
+
+
+### A. Ionized impurity scattering
+
+Dopant atoms become charged after ionization.
+
+For example:
+
+
+```math
+\mathrm{As}^0\rightarrow\mathrm{As}^++e^-
+```
+
+
+The positively charged arsenic ion produces an electrostatic field that deflects nearby electrons.
+
+The slide gives the approximate relationship:
+
+
+```math
+\boxed{ \mu_{\rm impurity} \propto \frac{T^{3/2}}{N_A+N_D} }
+```
+
+
+This means:
+
+- More ionized impurities → more scattering → lower mobility.
+- Higher temperature → reduced effectiveness of impurity scattering in the simplified model → higher mobility.
+
+At fixed dopant concentration:
+
+
+```math
+\boxed{\mu_{\rm impurity}\propto T^{3/2}}
+```
+
+
+### B. Phonon scattering
+
+Phonons represent vibrations of the crystal lattice.
+
+As temperature increases, lattice vibrations generally become stronger, causing more carrier scattering.
+
+The approximate relationship is:
+
+
+```math
+\boxed{\mu_{\rm phonon}\propto T^{-3/2}}
+```
+
+
+So:
+
+
+```math
+T\uparrow \Rightarrow \mu_{\rm phonon}\downarrow.
+```
+
+
+The exponents are approximate power laws used in the course.
+
+## 4.4 Why does the mobility–temperature curve have a maximum?
+
+The second slide shows a curved relationship between $\log\mu$ and $\log T$.
+
+At low temperature, impurity scattering dominates:
+
+
+```math
+\mu\propto T^{3/2}
+```
+
+
+so mobility increases with temperature.
+
+At high temperature, phonon scattering dominates:
+
+
+```math
+\mu\propto T^{-3/2}
+```
+
+
+so mobility decreases with temperature.
+
+Illustrative mobility–temperature trend
+
+Normalized conceptual values, not measured silicon data
+
+*Qualitative curve: mobility initially increases with temperature, reaches a maximum, and decreases at higher temperatures.*
+
+The maximum occurs near the crossover between the dominant scattering mechanisms.
+
+Taking logarithms:
+
+
+```math
+\log\mu_{\rm impurity} = \frac32\log T+\text{constant}
+```
+
+
+so the low-temperature log-log slope is
+
+
+```math
+\boxed{+\frac32}.
+```
+
+
+For phonons:
+
+
+```math
+\log\mu_{\rm phonon} = -\frac32\log T+\text{constant}
+```
+
+
+so the high-temperature slope is
+
+
+```math
+\boxed{-\frac32}.
+```
+
+
+This matches the graph you previously showed in the impurity/phonon scattering exam question.
+
+## 4.5 How do we combine two scattering mechanisms?
+
+The lecture introduces Matthiessen's rule:
+
+
+```math
+\boxed{ \frac1{\tau_{\rm total}} = \frac1{\tau_{\rm phonon}} + \frac1{\tau_{\rm impurity}} }
+```
+
+
+Since:
+
+
+```math
+\mu=\frac{q\tau}{m^*},
+```
+
+
+the corresponding mobility relation is:
+
+
+```math
+\boxed{ \frac1{\mu_{\rm total}} = \frac1{\mu_{\rm phonon}} + \frac1{\mu_{\rm impurity}} }
+```
+
+
+Therefore:
+
+
+```math
+\boxed{ \mu_{\rm total} = \frac{\mu_{\rm phonon}\mu_{\rm impurity}} {\mu_{\rm phonon}+\mu_{\rm impurity}} }
+```
+
+
+This is analogous to adding scattering rates.
+
+For example, if:
+
+
+```math
+\mu_{\rm phonon}=1000
+```
+
+
+and
+
+
+```math
+\mu_{\rm impurity}=500
+```
+
+
+in cm²/(V·s), then:
+
+
+```math
+\frac1{\mu_{\rm total}} = \frac1{1000}+\frac1{500}
+```
+
+
+giving
+
+
+```math
+\boxed{\mu_{\rm total}\approx333\ \mathrm{cm^2/(V\\,s)}}.
+```
+
+
+Notice:
+
+
+```math
+\mu_{\rm total}<\mu_{\rm impurity},\mu_{\rm phonon}.
+```
+
+
+Combining scattering mechanisms reduces the overall mobility.
+
+## 4.6 Why does increasing dopant concentration decrease mobility?
+
+Look at the third slide's graph.
+
+The x-axis is:
+
+
+```math
+\boxed{N_A+N_D\quad(\mathrm{cm^{-3}})}
+```
+
+
+and the y-axis is mobility in cm²/(V·s).
+
+The important distinction is:
+
+
+```math
+\boxed{ N_A+N_D=\text{total impurity concentration} }
+```
+
+
+whereas
+
+
+```math
+\boxed{ N_D-N_A=\text{net donor concentration} }
+```
+
+
+These are not interchangeable.
+
+For charge neutrality, we use the difference:
+
+
+```math
+n-p=N_D-N_A.
+```
+
+
+For ionized-impurity scattering, we use the total ionized dopant concentration:
+
+
+```math
+N_A+N_D
+```
+
+
+under complete ionization.
+
+Even if acceptors compensate donors, both positively charged donor ions and negatively charged acceptor ions can scatter carriers.
+
+Therefore:
+
+
+```math
+\boxed{ N_A+N_D\uparrow \Rightarrow \mu_{\rm impurity}\downarrow }
+```
+
+
+This explains why both the electron and hole curves decrease as doping increases.
+
+### Connection to your earlier counter-doping question
+
+Suppose:
+
+
+```math
+N_D=10^{17}\ \mathrm{cm^{-3}}
+```
+
+
+and
+
+
+```math
+N_A=9\times10^{16}\ \mathrm{cm^{-3}}.
+```
+
+
+Then the net doping is:
+
+
+```math
+N_D-N_A=10^{16}\ \mathrm{cm^{-3}}.
+```
+
+
+But the total ionized impurity concentration is:
+
+
+```math
+N_D+N_A=1.9\times10^{17}\ \mathrm{cm^{-3}}.
+```
+
+
+So although the mobile majority-electron concentration is approximately $10^{16}\ \mathrm{cm^{-3}}$, the carriers experience scattering from approximately $1.9\times10^{17}\ \mathrm{cm^{-3}}$ ionized dopants.
+
+That is why heavily compensated semiconductors can have significantly reduced mobility even when their net carrier concentration is moderate.
+
+## 4.7 How mobility affects conductivity
+
+The drift-velocity relations are:
+
+
+```math
+\boxed{ \sigma=qn\mu_n+qp\mu_p }
+```
+
+
+or
+
+
+```math
+\boxed{ \sigma=q(n\mu_n+p\mu_p) }
+```
+
+
+where:
+
+- $\sigma$: electrical conductivity, S/cm
+- $n,p$: electron and hole concentrations, cm$^{-3}$
+- $\mu_n,\mu_p$: mobilities, cm²/(V·s)
+
+For strongly n-type silicon:
+
+
+```math
+n\gg p
+```
+
+
+so
+
+
+```math
+\boxed{\sigma\approx qn\mu_n}.
+```
+
+
+For strongly p-type silicon:
+
+
+```math
+p\gg n
+```
+
+
+so
+
+
+```math
+\boxed{\sigma\approx qp\mu_p}.
+```
+
+
+Doping therefore has two competing effects:
+
+
+```math
+\boxed{ \text{More dopants} \rightarrow \begin{cases} \text{More mobile carriers}\\ \text{More impurity scattering} \end{cases} }
+```
+
+
+Increasing doping generally increases the majority-carrier concentration but also tends to reduce mobility. The resulting conductivity depends on both effects.
+
+## 4.8 Exam equations to memorize
+
+| Concept                 | Equation                                              |
+| ----------------------- | ----------------------------------------------------- |
+| Hole drift velocity     | $v_p=\mu_p\mathcal E$                             |
+| Electron drift velocity | $v_n=-\mu_n\mathcal E$                            |
+| Electron mobility       | $\mu_n=q\tau_{mn}/m_n^*$                        |
+| Hole mobility           | $\mu_p=q\tau_{mp}/m_p^*$                        |
+| Impurity scattering     | $\mu_{\rm impurity}\propto T^{3/2}/(N_A+N_D)$    |
+| Phonon scattering       | $\mu_{\rm phonon}\propto T^{-3/2}$               |
+| Matthiessen's rule      | $1/\mu=1/\mu_{\rm phonon}+1/\mu_{\rm impurity}$ |
+| Conductivity            | $\sigma=q(n\mu_n+p\mu_p)$                         |
+| Resistivity             | $\rho=1/\sigma$                                   |
+
+## 4.9 Final conceptual connection
+
+From all the semiconductor slides you've studied:
+
+
+```math
+\boxed{ \begin{gathered} \text{Doping and Fermi level}\\ \downarrow\\ \text{Electron and hole concentrations }(n,p)\\ \downarrow\\ \text{Carrier transport under an electric field}\\ \downarrow\\ \text{Scattering determines mobility }(\mu)\\ \downarrow\\ \boxed{\sigma=q(n\mu_n+p\mu_p)} \end{gathered} }
+```
+
+
+The most important takeaway: Carrier concentration tells you how many charge carriers are available, while mobility tells you how easily those carriers can move. Both are required to determine electrical conductivity.
+
+---
+
+These notes build on doping, electron/hole concentrations, carrier mobility, drift and diffusion, and PN-junction band diagrams.
+
+They connect through one central question:
+
+Once electrons and holes are generated in a semiconductor, what determines whether they recombine, conduct electricity, or produce useful current?
+
+
+```math
+\boxed{ \begin{gathered} \text{Electron–hole generation}\\ \downarrow\\ \text{Carrier transport: drift and diffusion}\\ \downarrow\\ \text{Recombination or carrier collection}\\ \downarrow\\ \text{Electrical current}\\ \downarrow\\ \text{Device behavior: solar cells, diodes, contacts} \end{gathered} }
+```
+
+
+## 4.10 Recombination — Slide 17
+
+### What is recombination?
+
+From our previous semiconductor discussion, an electron can be excited from the valence band into the conduction band, creating an electron–hole pair.
+
+
+```math
+\boxed{ e^-_{\mathrm{valence}} \xrightarrow{\text{energy absorption}} e^-_{\mathrm{conduction}}+h^+ }
+```
+
+
+Recombination is the reverse process: a conduction-band electron loses energy and fills a hole in the valence band.
+
+Two common pathways are:
+
+**Direct recombination:** Electron recombines directly with a hole.
+
+**Trap-assisted recombination:** An electron passes through a defect level $E_t$ inside the band gap.
+
+### Why do impurities facilitate recombination?
+
+Impurities such as Au and Pt can introduce deep traps in the band gap.
+
+A deep trap provides an intermediate energy state between $E_C$ and $E_V$. This can allow recombination to occur through successive carrier-capture events rather than a direct band-to-band transition.
+
+These defects are called recombination centers.
+
+### Carrier lifetime
+
+The slide defines carrier lifetime $\tau$ as the characteristic time for excess photogenerated carriers to recombine.
+
+For a simple first-order recombination model after illumination stops:
+
+
+```math
+\boxed{ \Delta n(t)=\Delta n(0)e^{-t/\tau} }
+```
+
+
+where:
+
+| Symbol            | Meaning                                       | Unit          |
+| ----------------- | --------------------------------------------- | ------------- |
+| $\Delta n(t)$ | Excess electron concentration at time $t$ | cm$^{-3}$ |
+| $\Delta n(0)$ | Initial excess electron concentration         | cm$^{-3}$ |
+| $\tau$        | Carrier recombination lifetime                | s             |
+| $t$           | Elapsed time after generation stops           | s             |
+
+After one lifetime:
+
+
+```math
+\Delta n(\tau)=\frac{\Delta n(0)}e\approx0.368\Delta n(0).
+```
+
+
+The slide gives an approximate lifetime range in silicon of 1 ns to 1 ms, depending strongly on impurity and defect conditions.
+
+Important distinction from carrier scattering theory:
+
+
+```math
+\boxed{ \tau_{\rm momentum}\neq\tau_{\rm recombination} }
+```
+
+
+Momentum relaxation time describes how quickly scattering randomizes carrier momentum. Recombination lifetime describes how long an excess carrier survives before recombination.
+
+## 4.11 Solar cell physics — Slides 18 and Basic Solar Cell Structure
+
+Your solar-cell slides apply recombination and transport to a useful device.
+
+### Step 1. Light generates electron–hole pairs
+
+A photon has energy:
+
+
+```math
+\boxed{E_{\rm photon}=h\nu=\frac{hc}{\lambda}}
+```
+
+
+For an electron to be excited across the semiconductor band gap through band-to-band absorption:
+
+
+```math
+\boxed{h\nu\geq E_g}
+```
+
+
+For silicon at approximately room temperature:
+
+
+```math
+E_g\approx1.12\ \mathrm{eV}.
+```
+
+
+Photons with sufficient energy can generate electron–hole pairs.
+
+### Step 2. The depletion-region electric field separates carriers
+
+Recall the PN junction orientation from the earlier PN-junction diagrams:
+
+
+```math
+\boxed{\text{N region}\;|\;\text{P region}}
+```
+
+
+The built-in electric field points from the n-side toward the p-side.
+
+Therefore:
+
+- Electrons experience force opposite the electric field and move toward the n-side.
+- Holes experience force along the electric field and move toward the p-side.
+
+This separation reduces immediate recombination and enables photocurrent collection.
+
+### Step 3. Why does diffusion length matter?
+
+The solar-cell slide notes carriers generated farther from the depletion region than their diffusion length may recombine before reaching the junction.
+
+The key relationship is:
+
+
+```math
+\boxed{ L_n=\sqrt{D_n\tau_n} }
+```
+
+
+
+```math
+\boxed{ L_p=\sqrt{D_p\tau_p} }
+```
+
+
+where $D$ is the carrier diffusion coefficient in cm²/s, $\tau$ is the recombination lifetime in seconds, and $L$ is diffusion length in cm.
+
+Thus:
+
+
+```math
+\boxed{ \tau\uparrow\Rightarrow L\uparrow }
+```
+
+
+A longer lifetime generally allows carriers generated farther from the depletion region to reach the junction before recombining.
+
+Diffusion length is a characteristic scale, not an absolute cutoff: collection probability decreases gradually with distance.
+
+### Step 4. Why does the solar cell need metal contacts?
+
+The basic solar-cell diagram labels an antireflection coating, a shallow n-region, a p-region, front ohmic contacts, and a back ohmic contact.
+
+The functions are:
+
+| Component              | Function                                                 |
+| ---------------------- | -------------------------------------------------------- |
+| Antireflection coating | Reduces optical reflection and improves light absorption |
+| PN junction            | Provides built-in field for carrier separation           |
+| Front metal grid       | Collects electrons while allowing light to enter         |
+| Back metal contact     | Collects holes on the p-side                             |
+| External circuit/load  | Allows separated charges to deliver electrical power     |
+
+This connects directly to the metal–semiconductor contact slides: the contacts should provide efficient charge extraction without introducing a large unwanted electrical barrier.
+
+## 4.12 Electrical conductivity — Slide 18
+
+This slide combines the carrier concentrations we previously calculated with the mobility equations from carrier scattering theory.
+
+
+```math
+\boxed{ \sigma=q(n\mu_n+p\mu_p) }
+```
+
+
+where $\sigma$ is conductivity in S/m (when using SI units), $n,p$ are carrier concentrations, and $\mu_n,\mu_p$ are electron and hole mobilities.
+
+The physical meaning is:
+
+
+```math
+\boxed{ \text{Conductivity} = \text{number of carriers} \times \text{charge} \times \text{ease of movement} }
+```
+
+
+Three common cases:
+
+| Semiconductor | Carrier relationship | Conductivity                   |
+| ------------- | -------------------- | ------------------------------ |
+| Intrinsic     | $n=p=n_i$        | $\sigma=qn_i(\mu_n+\mu_p)$ |
+| N-type        | $n\gg p$         | $\sigma\approx qn\mu_n$    |
+| P-type        | $p\gg n$         | $\sigma\approx qp\mu_p$    |
+
+Resistivity and resistance are:
+
+
+```math
+\boxed{\rho=\frac1\sigma}
+```
+
+
+
+```math
+\boxed{R=\rho\frac{L}{A}}
+```
+
+
+Here $L$ is the conduction path length and $A$ is its cross-sectional area. The second equation assumes a uniform conductor.
+
+This is why solar-cell metal contacts and semiconductor doping matter: both affect how easily generated carriers can deliver current.
+
+## 4.13 Forward and reverse bias — Slide 20
+
+This slide revisits the PN-junction band diagrams from the earlier discussion.
+
+The built-in potential is:
+
+
+```math
+\boxed{ V_{bi} = \frac{kT}{q} \ln\left(\frac{N_AN_D}{n_i^2}\right) }
+```
+
+
+At equilibrium, the diffusion and drift components balance, producing zero net current.
+
+An applied voltage changes the potential barrier.
+
+### Comparison of PN-junction bias
+
+| Condition | Potential barrier | Carrier transport |
+| --- | --- | --- |
+| Equilibrium | $V_{bi}$ | Drift and diffusion currents balance; net current is zero |
+| Forward bias | $V_{bi}-V_F$ | Reduced barrier and increased forward current |
+| Reverse bias | $V_{bi}+V_R$ | Increased barrier and small reverse current before breakdown |
+
+For example, with $V_{bi}=0.775$ V and an applied voltage magnitude of 0.30 V, the idealized barriers are 0.475 V (forward) and 1.075 V (reverse). Under applied bias, electron and hole quasi-Fermi levels generally differ.
+
+The ideal diode equation is:
+
+
+```math
+\boxed{ I=I_0\left(e^{qV/(kT)}-1\right) }
+```
+
+
+At forward bias, current rises exponentially.
+
+At ordinary reverse bias before breakdown, the ideal diode model gives approximately $I=-I_0$.
+
+## 4.14 Reverse breakdown — Slide 21
+
+Your slide identifies two breakdown mechanisms: avalanche and Zener breakdown.
+
+| Mechanism | Physical process                                                                         | Conditions favoring it                                 |
+| --------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Avalanche | Carriers accelerate and cause impact ionization, creating additional electron–hole pairs | Strong electric field and enough acceleration distance |
+| Zener     | Electrons tunnel quantum-mechanically across the band gap                                | Heavy doping and a narrow depletion region             |
+
+### Avalanche breakdown
+
+The reverse electric field accelerates carriers. Energetic carriers can collide with the lattice and generate additional electron–hole pairs.
+
+These new carriers can be accelerated and create still more carriers.
+
+
+```math
+\boxed{ 1\text{ carrier} \rightarrow \text{impact ionization} \rightarrow \text{multiple carriers} }
+```
+
+
+This multiplication causes a sharp increase in reverse current.
+
+### Zener breakdown
+
+Heavy doping gives a narrow depletion region:
+
+
+```math
+\boxed{ W\propto \sqrt{ \frac1{N_A}+\frac1{N_D} } }
+```
+
+
+for fixed barrier voltage and other parameters.
+
+A sufficiently narrow barrier and strong electric field allow electrons to tunnel from occupied valence-band states on the p-side into available conduction-band states on the n-side.
+
+The crucial distinction is:
+
+
+```math
+\boxed{ \text{Avalanche = impact ionization} \qquad \text{Zener = quantum tunneling} }
+```
+
+
+Both mechanisms may contribute in real diodes.
+
+## 4.15 Metal–semiconductor junctions — Slide 19
+
+The next topic shifts from a PN junction, which joins two doped regions of the same semiconductor, to a metal–semiconductor junction.
+
+This introduces two new energy concepts: work function and electron affinity.
+
+### Work function
+
+The work function is the energy required to take an electron from the Fermi level to the vacuum level:
+
+
+```math
+\boxed{q\Phi_M=E_{\rm vac}-E_{FM}}
+```
+
+
+for a metal, and
+
+
+```math
+\boxed{q\Phi_S=E_{\rm vac}-E_{FS}}
+```
+
+
+for a semiconductor.
+
+### Electron affinity
+
+Electron affinity is the energy separation between the conduction-band minimum and the vacuum level:
+
+
+```math
+\boxed{q\chi=E_{\rm vac}-E_C}
+```
+
+
+For an n-type semiconductor:
+
+
+```math
+\boxed{ q\Phi_S=q\chi+(E_C-E_F) }
+```
+
+
+Energy levels before metal–semiconductor contact
+
+When metal and semiconductor are brought into contact and reach equilibrium, their Fermi levels align. Depending on the work-function difference and doping, semiconductor bands may bend upward or downward near the interface.
+
+For an ideal n-type contact without surface states, the Schottky barrier height is:
+
+
+```math
+\boxed{\Phi_{Bn}=\Phi_M-\chi}
+```
+
+
+and the signed built-in potential difference is:
+
+
+```math
+\boxed{ V_{bi}=\Phi_M-\Phi_S }
+```
+
+
+when work functions are expressed in volts.
+
+For a positive n-type depletion barrier:
+
+
+```math
+\boxed{ W=\sqrt{\frac{2\epsilon_sV_{bi}}{qN_D}} }
+```
+
+
+under the depletion approximation.
+
+## 4.16 Schottky versus ohmic contacts
+
+This is the central distinction in the next slide.
+
+| Ideal contact type | N-type semiconductor | P-type semiconductor | Electrical behavior  |
+| ------------------ | -------------------- | -------------------- | -------------------- |
+| Schottky tendency  | $\Phi_M>\Phi_S$  | $\Phi_M<\Phi_S$  | Rectifying           |
+| Ohmic tendency     | $\Phi_M<\Phi_S$  | $\Phi_M>\Phi_S$  | Approximately linear |
+
+### Schottky contact
+
+A Schottky contact produces a carrier transport barrier and can show asymmetric current under forward and reverse bias.
+
+### Ohmic contact
+
+An ohmic contact allows current to flow relatively easily in both directions, with an approximately linear current–voltage relationship:
+
+
+```math
+\boxed{I\approx\frac VR}
+```
+
+
+This is why the solar cell in the solar-cell structure specifically labels front ohmic contact and back ohmic contact.
+
+Contacts are intended to collect generated carriers with minimal additional resistance or rectifying behavior.
+
+The table is an ideal work-function-based guideline. Actual contacts also depend on surface states, Fermi-level pinning, interface chemistry, and tunneling through heavily doped regions.
+
+## 4.17 Final connection to solar-cell design
+
+A typical solar-cell structure includes a practical structure: n-type emitter over a p-type substrate, antireflection coating, metal contacts, and the PN junction.
+
+A functioning solar cell requires several things to work together:
+
+
+```math
+\boxed{ \begin{gathered} h\nu\geq E_g\\ \downarrow\\ \text{Generate electron–hole pairs}\\ \downarrow\\ \text{Carriers survive long enough }(\tau)\\ \downarrow\\ \text{Diffuse or drift toward collecting regions}\\ \downarrow\\ \text{PN junction separates and collects carriers}\\ \downarrow\\ \text{Ohmic contacts deliver current to external circuit} \end{gathered} }
+```
+
+
+The connection between recombination and collection is especially important:
+
+
+```math
+\boxed{L=\sqrt{D\tau}}
+```
+
+
+If impurities introduce deep traps, recombination lifetime can decrease, reducing diffusion length and potentially reducing the fraction of photogenerated carriers collected.
+
+## 4.18 Key equations from these slides
+
+| Topic                          | Equation                                          |
+| ------------------------------ | ------------------------------------------------- |
+| Excess-carrier decay           | $\Delta n(t)=\Delta n(0)e^{-t/\tau}$          |
+| Diffusion length               | $L=\sqrt{D\tau}$                              |
+| Photon energy                  | $E=h\nu$                                      |
+| Conductivity                   | $\sigma=q(n\mu_n+p\mu_p)$                     |
+| Resistivity                    | $\rho=1/\sigma$                               |
+| Resistance                     | $R=\rho L/A$                                  |
+| Built-in potential             | $V_{bi}=\frac{kT}{q}\ln\frac{N_AN_D}{n_i^2}$ |
+| Forward barrier                | $V_{bi}-V_F$                                 |
+| Reverse barrier                | $V_{bi}+V_R$                                 |
+| Diode equation                 | $I=I_0(e^{qV/kT}-1)$                          |
+| Semiconductor work function    | $q\Phi_S=q\chi+(E_C-E_F)$                     |
+| N-type Schottky barrier        | $\Phi_{Bn}=\Phi_M-\chi$                      |
+| Ideal contact built-in voltage | $V_{bi}=\Phi_M-\Phi_S$                       |
+
+For MSE 123, the most useful distinction is that doping determines the available carrier populations, mobility determines how easily they move, recombination determines how long excess carriers survive, and junction/contact energy barriers determine whether carriers can cross an interface efficiently.
+
+These are related concepts, but each answers a different physical question.
+
+
+
 
 
 
